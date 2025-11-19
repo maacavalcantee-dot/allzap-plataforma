@@ -1,0 +1,7 @@
+{
+  "name": "Allzap - Plataforma de Gestão WhatsApp",
+  "description": "Uma plataforma para conectar e gerenciar múltiplos números de WhatsApp em um só local, com workflows de conversa e ferramentas de disparo em massa, além de relatórios para analisar o desempenho da sua equipe.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

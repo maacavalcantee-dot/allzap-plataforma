@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allzap - Plataforma de Gestão WhatsApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              whatsapp: {
+                '50': '#f0fdfa',
+                '100': '#ccfbf1',
+                '200': '#99f6e4',
+                '300': '#5eead4',
+                '400': '#2dd4bf',
+                '500': '#14b8a6',
+                '600': '#0d9488',
+                '700': '#0f766e',
+                '800': '#115e59',
+                '900': '#134e4a',
+                '950': '#042f2e',
+              },
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<style>
+  @media print {
+    @page {
+      margin: 1cm;
+      size: landscape;
+    }
+    
+    /* Ocultar elementos que não devem sair no PDF */
+    header, .no-print {
+      display: none !important;
+    }
+
+    /* Resetar cores e fundos para impressão */
+    body, main, #root {
+      background-color: white !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    /* Garantir que cores de fundo (gráficos) apareçam */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Ajustes de layout para o relatório */
+    .print-break-inside-avoid {
+      break-inside: avoid;
+    }
+  }
+</style>
+</head>
+  <body class="bg-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
