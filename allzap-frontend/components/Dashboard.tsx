@@ -4,7 +4,6 @@ import type { WhatsAppAccount, Conversation, Message, MessageAttachment } from '
 import WhatsAppColumn from './WhatsAppColumn';
 import { PlusIcon } from './icons/PlusIcon';
 import QRCodeModal from './QRCodeModal';
-import BackendSetupModal from './BackendSetupModal';
 
 interface DashboardProps {
   accounts: WhatsAppAccount[];
@@ -65,26 +64,12 @@ const Dashboard: React.FC<DashboardProps> = ({
             <span className="text-lg font-semibold">Conectar Novo WhatsApp</span>
             <span className="text-sm text-slate-400 mt-1">Escaneie o QR Code</span>
          </button>
-
-         <button 
-            onClick={() => setIsBackendModalOpen(true)}
-            className="w-full py-4 bg-slate-800 text-white rounded-xl font-medium hover:bg-slate-900 transition-colors shadow-sm flex items-center justify-center space-x-2"
-         >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-            </svg>
-            <span>Instalar Backend</span>
-         </button>
        </div>
 
        <QRCodeModal 
          isOpen={isQRModalOpen} 
          onClose={() => setIsQRModalOpen(false)}
          onConnected={handleConnectAccount}
-       />
-       <BackendSetupModal
-         isOpen={isBackendModalOpen}
-         onClose={() => setIsBackendModalOpen(false)}
        />
     </div>
   );
